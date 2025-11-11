@@ -1,0 +1,81 @@
+/* Estilo general */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Encabezados */
+thead th {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Filas */
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tbody tr:hover {
+    background-color: #eef2ff;
+    transition: background 0.3s ease;
+}
+
+/* Celdas */
+td, th {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    th {
+        background-color: transparent;
+        color: #111827;
+        font-size: 14px;
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    td {
+        padding: 5px 0;
+    }
+}
