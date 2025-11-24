@@ -15,7 +15,7 @@ class PintorController extends Controller {
     public function create() {
         $pintor = Pintor::find(2);
 
-        $pintura = 
+        // $pintura = 
     }
 
     public function store(Request $request){
@@ -70,5 +70,10 @@ class PintorController extends Controller {
     public function destroy(string $id) {
         $pintor = Pintor::find(1);
         $pintor->delete();
+    }
+
+    public function autores() {
+        $pintores = Pintor::all();
+        return view('autores', ['pintores'=> $pintores]);
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PintorController;
 use App\Http\Controllers\PinturaController;
+use App\Http\Controllers\Relacion1NController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,9 @@ Route::delete('pintor/{pintor}', [PintorController::class,'destroy'])->name('pin
 
 Route::get('pintura/create', [PinturaController::class,'create'])->name('pintura.create');
 Route::get('pintura', [PinturaController::class,'index'])->name('pintura.index');
+
+Route::get('pinturas-velazquez', [Relacion1NController::class,'read'])->name('leer');
+Route::get('pintor-meninas', [Relacion1NController::class,'display'])->name('exponer');
+
+Route::get('autores', [PintorController::class,'autores'])->name('autores');
+Route::get('galeria', [PinturaController::class,'galeria'])->name('galeria');

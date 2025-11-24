@@ -16,6 +16,7 @@ return new class extends Migration
             
             $table->string('nombre')->unique();
             $table->string('bio');
+            $table->string('pintor_foto')->nullable();
 
             $table->timestamps();
         });
