@@ -1,0 +1,219 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Azul Oscuro Moderno */
+/* -------------------------------------- */
+:root {
+    --client-dark: #24293e; /* Fondo oscuro principal */
+    --client-card-bg: #2e354e; /* Fondo de la tarjeta */
+    --client-accent: #00c0a9; /* Teal/Cyan de acento */
+    --client-focus: #4dd0e1; /* Azul claro para el foco/títulos */
+    --client-light: #e0e0e0; /* Texto claro */
+    --client-placeholder: #8892b0; /* Gris azulado */
+    --client-border: #444c66; /* Borde sutil */
+}
+
+/* -------------------------------------- */
+/* Estilos del Contenedor Principal (Main) */
+/* -------------------------------------- */
+main {
+    padding: 2rem 0;
+}
+
+.card-perfil {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--client-card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--client-border);
+    overflow: hidden;
+}
+
+.perfil-flex {
+    display: flex;
+    gap: 0px; /* Reducimos el gap si la foto y los datos están en el mismo fondo */
+}
+
+/* -------------------------------------- */
+/* Columna de Foto y Botones */
+/* -------------------------------------- */
+.perfil-foto {
+    flex-shrink: 0;
+    width: 350px; 
+    height: 500px; 
+    background-color: var(--client-dark); /* Fondo más oscuro para la foto */
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.perfil-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--client-accent); /* Borde de acento Teal */
+    box-sizing: border-box;
+}
+
+/* Estilo para el placeholder */
+.poster-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--client-dark);
+}
+
+.perfil-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 15px;
+    justify-content: center;
+}
+
+.perfil-botones button {
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botón Editar - Utiliza el acento principal (Teal) */
+.perfil-botones a:nth-child(1) button {
+    background-color: var(--client-accent);
+    color: var(--client-dark);
+}
+
+.perfil-botones a:nth-child(1) button:hover {
+    background-color: #38e0cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 192, 169, 0.3);
+}
+
+/* Botón Eliminar - Utiliza un rojo de advertencia sobre el tema oscuro */
+.perfil-botones a:nth-child(2) button {
+    background-color: #e50914; 
+    color: white;
+}
+
+.perfil-botones a:nth-child(2) button:hover {
+    background-color: #ff3340;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(229, 9, 20, 0.3);
+}
+
+/* -------------------------------------- */
+/* Columna de Datos */
+/* -------------------------------------- */
+.perfil-datos {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.perfil-datos h1 {
+    color: var(--client-focus); /* Título en Azul claro/Focus */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--client-border);
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Subtítulo Ficha de Registro */
+.perfil-datos .movie-subtitle {
+    color: var(--client-accent); /* Subtítulo en Teal/Cyan */
+    font-style: italic;
+    margin-top: -10px;
+}
+
+/* Separador */
+.perfil-datos .movie-divider {
+    border-color: var(--client-border);
+}
+
+
+.perfil-item {
+    font-size: 1rem;
+    color: var(--client-light);
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.perfil-item span {
+    display: block;
+    font-weight: 400;
+    color: var(--client-placeholder);
+    margin-top: 2px;
+}
+
+/* -------------------------------------- */
+/* Adaptación a Móviles */
+/* -------------------------------------- */
+@media (max-width: 900px) {
+    .card-perfil {
+        margin: 1rem;
+    }
+    .perfil-flex {
+        flex-direction: column;
+        gap: 0;
+    }
+    .perfil-foto {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        border-radius: 15px 15px 0 0;
+    }
+    .perfil-foto img {
+        border: none;
+        border-bottom: 3px solid var(--client-accent);
+    }
+    .perfil-datos {
+        padding: 25px;
+    }
+    .perfil-botones {
+        margin-bottom: 20px;
+    }
+}
+
+/* -------------------------------------- */
+/* Estilos de la Ventana Modal (Bootstrap) */
+/* -------------------------------------- */
+.modal-content {
+    background-color: var(--client-card-bg) !important;
+    color: var(--client-light) !important;
+    border: 1px solid var(--client-border);
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--client-border);
+}
+
+.modal-title {
+    color: var(--client-focus) !important;
+}
+
+.modal-body {
+    color: var(--client-placeholder);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--client-border);
+}
+
+.modal-footer .btn-secondary {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+}
+
+.modal-footer .btn-danger {
+    background-color: #e50914; /* Rojo de advertencia consistente */
+    border-color: #e50914;
+    color: white;
+}

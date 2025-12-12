@@ -1,0 +1,197 @@
+/* Variables de color para el tema Videoclub */
+:root {
+    --vc-dark: #1c1c1c; /* Fondo principal */
+    --vc-dark-card: #2b2b2b; /* Fondo del formulario */
+    --vc-red: #e50914; /* Rojo de acento (Botones, Borders) */
+    --vc-gold: #ffc300; /* Dorado/Amarillo de acento (Foco, Iconos) */
+    --vc-light: #f7f7f7; /* Texto claro */
+    --vc-gray: #b0b0b0; /* Texto secundario */
+}
+
+/* Contenedor del formulario - Estilo de 'Cartelera Nocturna' */
+form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: var(--vc-dark-card); 
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    border: 1px solid #444;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Espaciado entre campos */
+.espacio,
+form > div {
+    margin-bottom: 1.5rem;
+}
+
+.espacio:last-child,
+form > div:last-child {
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+
+/* Labels - Color y estilo de título de película */
+form label {
+    display: block;
+    font-weight: 700;
+    color: var(--vc-light); 
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Acento en el Label - Color Rojo Cinematográfico */
+form label::before {
+    content: '★'; 
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    color: var(--vc-red); 
+    font-size: 0.8rem;
+}
+
+/* Inputs y textareas - Contraste sutil */
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--vc-light); 
+    transition: all 0.3s ease;
+    background: #3a3a3a; /* Fondo del input ligeramente más claro que el formulario */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--vc-gold); 
+    background: #4a4a4a;
+    box-shadow: 0 0 0 4px rgba(255, 195, 0, 0.2);
+    color: #ffffff !important; 
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+/* Botón submit */
+.btn-primary {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--vc-red) 0%, #a0070f 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.6);
+}
+
+/* Alertas de Mensaje (para errores) */
+.alert-danger {
+    background-color: #4a1515; /* Fondo rojo oscuro */
+    color: #f5c6cb;
+    border: 1px solid var(--vc-red);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Estilos de la Portada Existente (Campo 'portada') */
+.existing-image {
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.existing-image img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Checkbox para eliminar imagen */
+.form-check-label {
+    color: var(--vc-gray);
+    font-weight: 400;
+}
+
+.form-check-input:checked {
+    background-color: var(--vc-red);
+    border-color: var(--vc-red);
+}
+
+/* Estilos para Drag & Drop */
+.drop-zone {
+    border: 2px dashed #555; 
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #333; /* Más oscuro para diferenciar */
+    margin-top: 1rem;
+}
+
+.drop-zone:hover {
+    border-color: var(--vc-gold);
+    background-color: #444;
+}
+
+.drop-zone.drag-over {
+    border-color: var(--vc-red);
+    background-color: rgba(229, 9, 20, 0.15);
+    transform: scale(1.01);
+}
+
+.drop-zone.has-image {
+    border-color: #27ae60; /* Verde de éxito al tener imagen */
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.drop-zone-text {
+    color: var(--vc-gray);
+    font-size: 16px;
+}
+
+.drop-zone-icon {
+    font-size: 48px;
+    color: var(--vc-gold); /* Icono en Dorado/Amarillo */
+    margin-bottom: 10px;
+}
+
+#imagePreview {
+    margin-top: 15px;
+   

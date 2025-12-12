@@ -1,0 +1,91 @@
+/* -------------------------------------- */
+/* Variables de color (Cinemático Oscuro - Consistente con Películas) */
+/* -------------------------------------- */
+:root {
+    --vc-dark-bg: #121212;      /* Fondo principal muy oscuro */
+    --vc-card-bg: #1c1c1c;      /* Fondo del formulario */
+    --vc-primary: #e50914;      /* Rojo Cinemático (Acción/Botón) */
+    --vc-accent: #ffc300;       /* Dorado/Ámbar (Título/Foco) */
+    --vc-light: #f0f0f0;        /* Texto principal claro */
+    --vc-secondary: #444444;    /* Gris industrial */
+}
+
+body {
+    background-color: var(--vc-dark-bg);
+}
+
+/* -------------------------------------- */
+/* Contenedor del formulario */
+/* -------------------------------------- */
+form {
+    max-width: 700px;
+    margin: 4rem auto; /* Más margen superior para centrar */
+    padding: 3rem;
+    background: var(--vc-card-bg); 
+    border-radius: 10px;
+    border: 1px solid var(--vc-secondary);
+    /* Borde de acento para la edición */
+    border-top: 5px solid var(--vc-accent); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* -------------------------------------- */
+/* Labels */
+/* -------------------------------------- */
+form label {
+    display: block;
+    font-weight: 700;
+    color: var(--vc-accent); /* Etiquetas en Dorado */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem; 
+    text-transform: uppercase;
+}
+
+/* -------------------------------------- */
+/* Textarea (Comentario) */
+/* -------------------------------------- */
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--vc-secondary);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--vc-light);
+    transition: all 0.3s ease;
+    background: #282828; /* Fondo del textarea ligeramente más oscuro */
+    resize: vertical;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--vc-accent); 
+    background: #303030;
+    box-shadow: 0 0 0 4px rgba(255, 195, 0, 0.2);
+    color: #ffffff;
+}
+
+/* -------------------------------------- */
+/* Botón submit */
+/* -------------------------------------- */
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    /* Color de acción Rojo Cinemático */
+    background-color: var(--vc-primary);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff3333; 
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(229, 9, 20, 0.6);
+}

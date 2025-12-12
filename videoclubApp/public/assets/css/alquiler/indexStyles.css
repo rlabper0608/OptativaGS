@@ -1,0 +1,157 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Recibo/Terminal (Naranja Quemado y Gris) */
+/* -------------------------------------- */
+:root {
+    --rent-dark: #171717; /* Fondo de la aplicación muy oscuro */
+    --rent-card-bg: #292929; /* Fondo de la tabla/modal */
+    --rent-header-bg: #333333; /* Fondo de la cabecera */
+    --rent-accent: #ff8c00; /* Naranja Quemado/Ámbar de acento */
+    --rent-focus: #ffbf00; /* Dorado para el foco/hover */
+    --rent-light: #ffffff; /* Blanco puro para mejor visibilidad */
+    --rent-secondary: #aaaaaa; /* Gris más claro para textos secundarios y bordes */
+    --rent-danger: #e50914; /* Rojo estándar para error/eliminar */
+    --rent-warning: #ffbf00; /* Dorado/Amarillo para editar */
+}
+
+/* -------------------------------------- */
+/* Estilos del Contenedor y Título Principal */
+/* -------------------------------------- */
+
+.table-container {
+    padding: 1rem 0;
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tabla */
+/* -------------------------------------- */
+
+.table-hover {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    background-color: var(--rent-card-bg);
+    color: var(--rent-light);
+}
+
+/* Cabecera (Thead) */
+.table-hover thead {
+    background-color: var(--rent-header-bg);
+    border-bottom: 3px solid var(--rent-accent);
+}
+
+.table-hover th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    color: var(--rent-focus); /* Texto de la cabecera en Dorado */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* Cuerpo (Tbody) */
+.table-hover tbody tr:nth-child(even) {
+    background-color: #242424; /* Alternar colores */
+}
+.table-hover tbody tr:nth-child(odd) {
+    background-color: var(--rent-card-bg);
+}
+
+/* Efecto Hover (Resaltado en Naranja/Dorado) */
+.table-hover tbody tr:hover {
+    background-color: #383838;
+    color: var(--rent-focus);
+}
+
+.table-hover td {
+    padding: 1rem 1.2rem;
+    /* CORREGIDO: Borde de la celda */
+    border-top: 1px solid var(--rent-secondary); 
+    font-size: 0.95rem;
+    color: var(--rent-light); /* Color principal del texto de datos */
+    background-color: transparent;
+}
+/* Estilo para el ID de alquiler (primera columna) */
+.table-hover td:first-child {
+    font-weight: 700;
+    color: var(--rent-accent); /* ID en Naranja Quemado */
+}
+
+/* Pie de página (Tfoot) */
+.table-hover tfoot {
+    background-color: var(--rent-header-bg);
+    border-top: 3px solid var(--rent-focus);
+}
+.table-hover tfoot th {
+    color: var(--rent-light);
+    font-weight: 700;
+}
+
+/* -------------------------------------- */
+/* Botón Principal (Nuevo Alquiler) */
+/* -------------------------------------- */
+.btn-primary-rent {
+    background-color: var(--rent-accent);
+    border-color: var(--rent-accent);
+    color: var(--rent-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* CORRECCIÓN: Eliminar bordes de foco */
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-primary-rent:hover {
+    background-color: var(--rent-focus);
+    border-color: var(--rent-focus);
+}
+
+
+/* -------------------------------------- */
+/* Botones de Acción (Tabla) */
+/* -------------------------------------- */
+
+.table-hover td a.btn {
+    /* CORRECCIÓN: Eliminar bordes de foco en los botones de la tabla */
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 4px; /* Asegurar bordes suaves */
+}
+
+/* Botón Edit */
+.btn-warning {
+    background-color: var(--rent-warning); /* Dorado */
+    border-color: var(--rent-warning);
+    color: var(--rent-dark) !important;
+    font-weight: 600;
+}
+
+/* Botón Delete */
+.btn-danger {
+    background-color: var(--rent-danger); /* Rojo */
+    border-color: var(--rent-danger);
+    color: white !important;
+    font-weight: 600;
+}
+
+
+/* -------------------------------------- */
+/* Estilos de la Ventana Modal (Bootstrap) */
+/* -------------------------------------- */
+.modal-content {
+    background-color: var(--rent-card-bg) !important;
+    color: var(--rent-light) !important;
+    border: 1px solid #444;
+}
+
+.modal-header, .modal-footer {
+    border-color: #444 !important;
+}
+
+.modal-title {
+    color: var(--rent-accent) !important;
+}

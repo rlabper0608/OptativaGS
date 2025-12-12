@@ -1,0 +1,159 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Azul Oscuro Moderno */
+/* -------------------------------------- */
+:root {
+    --client-dark: #24293e; /* Fondo oscuro principal */
+    --client-card-bg: #2e354e; /* Fondo del formulario */
+    --client-accent: #00c0a9; /* Teal/Cyan de acento */
+    --client-focus: #4dd0e1; /* Azul claro para el foco */
+    --client-light: #e0e0e0; /* Texto claro */
+    --client-placeholder: #8892b0; /* Gris azulado para placeholders */
+    --client-border: #444c66; /* Borde sutil */
+}
+
+/* -------------------------------------- */
+/* Contenedor del formulario */
+/* -------------------------------------- */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: var(--client-card-bg); 
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-top: 5px solid var(--client-accent); /* Barra superior de acento */
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Espaciado entre campos */
+.espacio,
+form > div {
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------- */
+/* Labels */
+/* -------------------------------------- */
+form label {
+    display: block;
+    font-weight: 600;
+    color: var(--client-light); 
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Eliminar el acento circular del label */
+form label::before {
+    content: none;
+}
+
+/* -------------------------------------- */
+/* Inputs y textareas */
+/* -------------------------------------- */
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--client-border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--client-light);
+    transition: all 0.3s ease;
+    background: #3a415a; /* Fondo del input ligeramente más claro que el formulario */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--client-focus); 
+    background: #3a415a;
+    box-shadow: 0 0 0 3px rgba(0, 192, 169, 0.3); /* Sombra de acento Teal */
+    color: #ffffff !important; 
+}
+
+.form-control::placeholder {
+    color: var(--client-placeholder);
+}
+
+/* -------------------------------------- */
+/* Botón submit */
+/* -------------------------------------- */
+.btn-primary {
+    width: 100%;
+    padding: 1rem 2rem;
+    /* Degradado de acento Teal/Cyan */
+    background: linear-gradient(135deg, var(--client-accent) 0%, #00a58a 100%);
+    color: var(--client-dark); 
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 192, 169, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 192, 169, 0.6);
+}
+
+/* -------------------------------------- */
+/* Estilos para Drag & Drop (Foto) */
+/* -------------------------------------- */
+.drop-zone {
+    border: 2px dashed var(--client-border);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #3a415a;
+    margin-bottom: 20px;
+}
+
+.drop-zone:hover {
+    border-color: var(--client-accent);
+    background-color: #444c66;
+}
+
+.drop-zone.drag-over {
+    border-color: var(--client-focus);
+    background-color: rgba(0, 192, 169, 0.1);
+    transform: scale(1.01);
+}
+
+.drop-zone-text {
+    color: var(--client-placeholder);
+    font-size: 14px;
+}
+
+.drop-zone-icon {
+    font-size: 40px;
+    color: var(--client-accent); 
+    margin-bottom: 5px;
+}
+
+#imagePreview img {
+    max-width: 100%; 
+    max-height: 200px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 3px solid var(--client-accent);
+}
+
+/* -------------------------------------- */
+/* Alertas de Error */
+/* -------------------------------------- */
+.alert-danger {
+    background-color: #5d252e; /* Rojo oscuro sutil */
+    color: #f0c0c0;
+    border: 1px solid #e50914;
+}

@@ -1,0 +1,140 @@
+/* -------------------------------------- */
+/* Variables de color (Tomadas de loginStyle.css para consistencia) */
+/* -------------------------------------- */
+:root {
+    --auth-dark-bg: #121212;     /* Fondo de la aplicación muy oscuro */
+    --auth-card-bg: #1e1e1e;     /* Fondo de la tarjeta (Terminal) */
+    --auth-accent: #ffc300;      /* Dorado/Ámbar (Resaltado) */
+    --auth-primary: #e50914;     /* Rojo Cinemático (Botones/Acción) */
+    --auth-light: #f0f0f0;       /* Texto claro */
+    --auth-secondary: #444444;   /* Gris industrial sutil */
+    --auth-success: #27ae60;     /* Verde para verificado */
+    --auth-warning: #ff8c00;     /* Naranja para reenviar verificación */
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tarjeta (Card) del Dashboard */
+/* -------------------------------------- */
+
+.card {
+    /* Mantenemos el estilo de tarjeta oscura */
+    background-color: var(--auth-card-bg);
+    border: 1px solid var(--auth-secondary);
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6); 
+    padding: 1.5rem;
+    color: var(--auth-light); /* Texto por defecto claro */
+}
+
+/* Cabecera de la Tarjeta */
+.card-header {
+    background-color: var(--auth-card-bg);
+    color: var(--auth-accent); /* Título en Dorado */
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--auth-primary); /* Línea divisoria roja */
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------- */
+/* Cuerpo y Contenido */
+/* -------------------------------------- */
+
+.card-body {
+    padding-top: 0;
+}
+
+/* Línea divisoria */
+.card-body hr {
+    border-top: 1px solid var(--auth-secondary);
+    margin: 1.5rem 0;
+}
+
+/* Texto de datos del usuario */
+.card-body > div:first-child {
+    color: var(--auth-light);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Resaltado de datos clave (Nombre, Correo) */
+.card-body br {
+    display: none; /* Quitamos los <br> si es necesario, aunque en este caso ayudan a la separación */
+    margin-top: 0.5rem;
+}
+
+/* -------------------------------------- */
+/* Estilos del Estado de Verificación */
+/* -------------------------------------- */
+
+/* Texto de estado de verificación (general) */
+.card-body p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Verificado (Éxito) */
+.card-body .text-success {
+    color: var(--auth-success) !important;
+}
+
+/* No Verificado (Peligro) */
+.card-body .text-danger {
+    color: var(--auth-primary) !important; /* Usamos el rojo cinemático para advertencia */
+}
+
+/* Botón de edición/acción */
+.card-body a {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--auth-accent); /* Enlaces en Dorado */
+    transition: color 0.2s ease;
+}
+
+.card-body a:hover {
+    color: var(--auth-light);
+}
+
+/* Estilo para el enlace de Edición de Perfil */
+.card-body a[href$="edit"] {
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 0.75rem;
+    border: 2px solid var(--auth-accent);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card-body a[href$="edit"]:hover {
+    background-color: var(--auth-accent);
+    color: var(--auth-dark-bg);
+}
+
+/* -------------------------------------- */
+/* Estilos Específicos para la Vista VERIFY */
+/* -------------------------------------- */
+
+/* Alerta de éxito (Enlace enviado) */
+.card-body .alert-success {
+    background-color: #1a381a; /* Verde oscuro sutil */
+    color: var(--auth-success);
+    border: 1px solid var(--auth-success);
+    font-weight: 500;
+}
+
+/* Botón de reenviar enlace (btn-link) */
+.card-body .btn-link {
+    color: var(--auth-primary) !important; /* Rojo cinemático para el CTA */
+    font-weight: 700;
+    text-decoration: underline;
+    text-transform: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.card-body .btn-link:hover {
+    color: var(--auth-accent) !important;
+}

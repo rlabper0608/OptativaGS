@@ -1,0 +1,202 @@
+/* Contenedor del formulario - Estilo de 'Cartelera Nocturna' */
+form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 3rem;
+    /* Fondo oscuro para simular una sala de cine o cartelera nocturna */
+    background: #1c1c1c; /* Negro carbón profundo */
+    border-radius: 12px;
+    /* Sombra con un toque dramático */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    /* Borde sutil para simular un marco */
+    border: 1px solid #333;
+}
+
+/* Espaciado entre campos */
+.espacio,
+form > div {
+    margin-bottom: 1.5rem;
+}
+
+.espacio:last-child,
+form > div:last-child {
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+
+/* Labels - Color y estilo de título de película */
+form label {
+    display: block;
+    font-weight: 700; /* Más audaz */
+    color: #f7f7f7; /* Blanco brillante sobre fondo oscuro */
+    margin-bottom: 0.6rem;
+    font-size: 1rem; /* Un poco más grande */
+    position: relative;
+    padding-left: 15px; /* Más espacio para el acento */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Acento en el Label - Color Rojo Cinematográfico */
+form label::before {
+    content: '★'; /* Usamos una estrella o un punto más dramático */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    color: #e50914; /* Rojo Netflix/Cine */
+    font-size: 0.8rem;
+}
+
+/* Inputs y textareas - Contraste sutil */
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    /* Borde y fondo más oscuros */
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #e0e0e0; /* Texto claro */
+    transition: all 0.3s ease;
+    background: #2b2b2b; /* Fondo oscuro */
+}
+
+.form-control:focus {
+    outline: none;
+    /* CORRECCIÓN CRÍTICA: Forzamos el color del texto a blanco puro con !important
+       para anular cualquier regla de herencia que lo esté oscureciendo. */
+    color: #ffffff !important; 
+    
+    /* Foco en Dorado/Amarillo de Acento */
+    border-color: #ffc300; 
+    background: #3a3a3a;
+    box-shadow: 0 0 0 4px rgba(255, 195, 0, 0.2);
+}
+
+.form-control::placeholder {
+    /* Mantenemos un gris medio para diferenciar del texto activo */
+    color: #888;
+}
+
+/* Textareas específicos */
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+/* Inputs de archivo - Zona de 'Casting' */
+input[type="file"].form-control {
+    padding: 0.75rem 1rem;
+    background: #2b2b2b;
+    /* Borde punteado en el rojo de acento */
+    border: 2px dashed #e50914; 
+    cursor: pointer;
+    position: relative;
+    color: #ffc300; /* Texto de archivo en acento */
+}
+
+input[type="file"].form-control:hover {
+    border-color: #ffc300; /* Dorado/Amarillo al pasar el mouse */
+    background: #333;
+}
+
+input[type="file"].form-control:focus {
+    border-style: solid;
+}
+
+/* Botón submit - 'Estreno' dramático */
+.btn-primary {
+    width: 100%;
+    padding: 1rem 2rem;
+    /* Degradado de Rojo Cinematográfico a un púrpura/negro oscuro */
+    background: linear-gradient(135deg, #e50914 0%, #a0070f 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem; /* Más prominente */
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px); /* Efecto de 'pop-out' */
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.6);
+    background: linear-gradient(135deg, #ff0f1e 0%, #b80811 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+}
+
+/* Estados de validación - Colores de semáforo cinematográficos */
+.form-control:invalid:not(:placeholder-shown) {
+    border-color: #f39c12; /* Naranja de advertencia (no un rojo chillón) */
+}
+
+.form-control:valid:not(:placeholder-shown) {
+    border-color: #27ae60; /* Verde de éxito */
+}
+
+/* El resto de estilos se mantiene, pero actualizamos los colores del Drag & Drop */
+
+/* Estilos para Drag & Drop */
+.drop-zone {
+    border: 2px dashed #555; /* Más oscuro */
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #2b2b2b;
+    margin-bottom: 20px;
+}
+
+.drop-zone:hover {
+    border-color: #ffc300; /* Dorado/Amarillo de acento */
+    background-color: #3a3a3a;
+}
+
+.drop-zone.drag-over {
+    border-color: #e50914; /* Rojo de acento al arrastrar */
+    background-color: rgba(229, 9, 20, 0.1);
+    transform: scale(1.02);
+}
+
+.drop-zone.has-image {
+    border-color: #27ae60; /* Verde de éxito al tener imagen */
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+.drop-zone-text {
+    color: #b0b0b0;
+    font-size: 16px;
+}
+
+.drop-zone-icon {
+    font-size: 48px;
+    color: #ffc300; /* Icono en Dorado/Amarillo */
+    margin-bottom: 10px;
+}
+
+#imagePreview {
+    margin-top: 15px;
+}
+
+/* Estilos para alertas de error */
+.alert.alert-danger {
+    background-color: #4a1515; /* Fondo rojo oscuro */
+    color: #e50914; /* Texto en rojo brillante */
+    border: 1px solid #e50914;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 1rem;
+}

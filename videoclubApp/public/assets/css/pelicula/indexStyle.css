@@ -1,0 +1,102 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Azul Oscuro Moderno */
+/* -------------------------------------- */
+:root {
+    --client-dark: #24293e; /* Fondo oscuro principal */
+    --client-card-bg: #2e354e; /* Fondo de la tarjeta */
+    --client-accent: #00c0a9; /* Teal/Cyan de acento */
+    --client-focus: #4dd0e1; /* Azul claro para el foco/títulos */
+    --client-light: #e0e0e0; /* Texto claro */
+    --client-placeholder: #8892b0; /* Gris azulado para placeholders */
+    --client-border: #444c66; /* Borde sutil */
+    --client-red: #e50914; /* Rojo de edición/peligro */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales de la Vista */
+/* -------------------------------------- */
+
+/* Título principal de la sección */
+.catalog-header h2 {
+    color: var(--client-focus);
+    font-weight: 700;
+}
+
+/* Botón principal (Añadir Película) */
+.btn-primary-accent {
+    background-color: var(--client-accent);
+    border-color: var(--client-accent);
+    font-weight: 600;
+    color: var(--client-dark);
+    transition: all 0.3s ease;
+}
+.btn-primary-accent:hover {
+    background-color: #38e0cc;
+    border-color: #38e0cc;
+}
+
+
+/* Mensaje de Catálogo Vacío */
+.alert.alert-warning {
+    background-color: var(--client-card-bg) !important;
+    color: var(--client-focus) !important;
+    border-color: var(--client-border) !important;
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tarjeta (Card) */
+/* -------------------------------------- */
+
+.poster-card {
+    background-color: var(--client-card-bg) !important;
+    border: 1px solid var(--client-border) !important;
+    border-radius: 10px !important;
+}
+
+.poster-image {
+    /* CORRECCIÓN CLAVE: Fuerza la imagen a tomar el 100% del ancho de su contenedor */
+    width: 100%; 
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 3px solid var(--client-accent);
+}
+
+.card-body .card-title {
+    color: var(--client-light);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-body .card-text {
+    color: var(--client-placeholder);
+    font-size: 0.9rem;
+}
+
+/* -------------------------------------- */
+/* Estilos de Botones de Acción */
+/* -------------------------------------- */
+
+/* Botón Ver Detalle (Outline Accent) */
+.btn-outline-accent {
+    color: var(--client-accent);
+    border: 1px solid var(--client-accent);
+    transition: all 0.2s ease;
+}
+.btn-outline-accent:hover {
+    background-color: var(--client-accent);
+    color: var(--client-dark);
+}
+
+/* Botón Editar (Outline Danger/Red) */
+.btn-outline-danger-custom {
+    color: var(--client-red);
+    border: 1px solid var(--client-red);
+    transition: all 0.2s ease;
+}
+.btn-outline-danger-custom:hover {
+    background-color: var(--client-red);
+    color: white;
+}

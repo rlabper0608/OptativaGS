@@ -1,0 +1,70 @@
+@extends('bootstrap.template')
+
+@section('title')
+Añadir una Copia
+@endsection
+
+@section('styles')
+<link rel="stylesheet" href="{{ url('assets/css/copia/createStyle.css') }}">
+@endsection
+
+@section('content')
+<form action="{{ route('copia.store') }}" method="post" enctype="multipart/form-data"> 
+    @csrf
+    <div class="espacio">
+        @error('idpelicula')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @enderror
+        <label for="idpelicula">Copia de la película:</label>
+        <select name="idpelicula" id="idpelicula" required class="form-control">
+            <option value="" @if(old('idpelicula') == null) selected @endif disabled>Selecciona una pelicula</option>
+            @foreach($peliculas as $indice=>$idpelicula)
+                <option value="{{ $indice }}" @if(old('idpelicula') == $indice) selected @endif>{{ $idpelicula }}</option>
+            @endforeach
+         </select>
+    </div>
+    <div class="espacio">
+        @error('codigo_barras')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @enderror
+        <label for="codigo_barras">Código de barras:</label>
+        <input class="form-control" required id="codigo_barras" name="codigo_barras" minlength="10" maxlength="10" value="{{ old('codigo_barras') }}" type="text">
+    </div>
+    <div class="espacio">
+        @error('estado')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @enderror
+        <label for="estado">Estado de la copia:</label>
+        <select class="form-control" required id="estado" name="estado">
+            <option>Elige el estado</option>
+            <option value="Disponible" @if(old('estado') == 'Disponible') selected @endif>Disponible</option>
+            <option value="Alquilado" @if(old('estado') == 'Alquilado') selected @endif>Alquilado</option>
+            <option value="Estropeado" @if(old('estado') == 'Estropeado') selected @endif>Estropeado</option>
+        </select>
+    </div>
+    <div class="espacio">
+        @error('formato')
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @enderror
+        <label for="formato">Formato de la copia:</label>
+        <select class="form-control" required id="formato" name="formato">
+            <option>Elige el formato</option>
+            <option value="DVD" @if(old('formato') == 'DVD') selected @endif>DVD</option>
+            <option value="Blu-Ray" @if(old('formato') == 'Blu-Ray') selected @endif>Blu-Ray</option>
+            <option value="CD" @if(old('formato') == 'CD') selected @endif>CD</option>
+        </select>
+    </div>
+    
+    <div class="espacio">
+        <input class="btn btn-primary" value="Añadir Copia" type="submit">
+    </div>
+</form>
+@endsection

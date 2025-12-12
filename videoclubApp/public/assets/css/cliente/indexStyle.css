@@ -1,0 +1,111 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Azul Oscuro Moderno */
+/* -------------------------------------- */
+:root {
+    --client-dark: #24293e; /* Fondo oscuro principal */
+    --client-card-bg: #2e354e; /* Fondo de la tarjeta */
+    --client-blue-primary: #3b82f6; /* AZUL VIBRANTE (Acción principal) */
+    --client-blue-secondary: #60a5fa; /* AZUL CLARO (Acción secundaria/Editar) */
+    --client-focus: #4dd0e1; /* Azul claro para el foco/títulos */
+    --client-light: #e0e0e0; /* Texto claro */
+    --client-placeholder: #8892b0; /* Gris azulado para placeholders/texto secundario */
+    --client-border: #444c66; /* Borde sutil */
+    --client-red: #e50914; /* Rojo de edición/peligro */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales de la Vista */
+/* -------------------------------------- */
+
+/* Contenedor del título y botón de acción */
+.catalog-header h2 {
+    color: var(--client-focus);
+    font-weight: 700;
+}
+
+/* Botón principal (Registrar Cliente) */
+.btn-primary-blue { /* Aplicado al botón de Crear */
+    background-color: var(--client-blue-primary);
+    border-color: var(--client-blue-primary);
+    font-weight: 600;
+    color: var(--client-light); /* Mejoramos la visibilidad del texto en el botón */
+    transition: all 0.3s ease;
+}
+.btn-primary-blue:hover {
+    background-color: #5b9bf8;
+    border-color: #5b9bf8;
+}
+
+/* Mensaje de Catálogo Vacío */
+.alert.alert-warning {
+    background-color: var(--client-card-bg) !important;
+    color: var(--client-focus) !important;
+    border-color: var(--client-border) !important;
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tarjeta (Card: .poster-card) */
+/* -------------------------------------- */
+
+.poster-card {
+    background-color: var(--client-card-bg) !important;
+    border: 1px solid var(--client-border) !important;
+    border-radius: 10px !important;
+}
+
+/* Imagen de Fotografía (Área de Portada) */
+.poster-image {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    /* Borde de acento Azul Principal */
+    border-bottom: 3px solid var(--client-blue-primary);
+}
+
+/* Estilo para el Placeholder (Sin Foto) */
+.poster-placeholder {
+    height: 350px;
+    background-color: var(--client-dark);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body .card-title {
+    color: var(--client-light);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-body .card-text {
+    color: var(--client-placeholder);
+    font-size: 0.9rem;
+}
+
+/* -------------------------------------- */
+/* Estilos de Botones de Acción (Outline Azules) */
+/* -------------------------------------- */
+
+/* Botón Ver Perfil (Outline Primary Blue) */
+.btn-outline-primary-blue { 
+    color: var(--client-blue-primary);
+    border: 1px solid var(--client-blue-primary);
+    transition: all 0.2s ease;
+}
+.btn-outline-primary-blue:hover {
+    /* CORRECCIÓN: Fondo sólido para mayor distinción */
+    background-color: var(--client-blue-primary);
+    color: white; 
+}
+
+/* Botón Editar (Outline Secondary Blue) */
+.btn-outline-secondary-blue { 
+    color: var(--client-blue-secondary);
+    border: 1px solid var(--client-blue-secondary);
+    transition: all 0.2s ease;
+}
+.btn-outline-secondary-blue:hover {
+    /* CORRECCIÓN: Fondo sólido para mayor distinción */
+    background-color: var(--client-blue-secondary);
+    color: var(--client-dark); /* Texto oscuro para contraste */
+}

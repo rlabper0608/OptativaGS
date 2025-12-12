@@ -1,0 +1,111 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Azul Oscuro Moderno (Admin/Cliente) */
+/* -------------------------------------- */
+:root {
+    --user-dark: #24293e; /* Fondo oscuro principal */
+    --user-table-bg: #2e354e; /* Fondo de la tabla */
+    --user-header-bg: #3a415a; /* Fondo de la cabecera */
+    --user-focus: #4dd0e1; /* Azul claro para el foco/títulos */
+    --user-light: #e0e0e0; /* Texto claro */
+    --user-border: #444c66; /* Borde sutil */
+    
+    --status-verified: #27ae60; /* Verde de éxito */
+    --status-unverified: #e50914; /* Rojo de advertencia */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales y Título */
+/* -------------------------------------- */
+body {
+    background-color: var(--user-dark);
+}
+
+.table-container {
+    padding: 2rem 0;
+}
+
+h2 {
+    color: var(--user-focus);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tabla (Admin List) */
+/* -------------------------------------- */
+
+.table-hover {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    background-color: var(--user-table-bg);
+    color: var(--user-light);
+}
+
+/* Cabecera (Thead) */
+.table-hover thead {
+    background-color: var(--user-header-bg);
+    border-bottom: 3px solid var(--user-focus);
+}
+
+.table-hover th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    color: var(--user-focus); /* Texto de la cabecera en Azul Claro */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* Cuerpo (Tbody) */
+.table-hover tbody tr:nth-child(even) {
+    background-color: #333951; /* Alternar color ligeramente más oscuro */
+}
+.table-hover tbody tr:nth-child(odd) {
+    background-color: var(--user-table-bg);
+}
+
+/* Efecto Hover */
+.table-hover tbody tr:hover {
+    background-color: #3a415a;
+    color: var(--user-focus);
+}
+
+.table-hover td {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid var(--user-border); 
+    font-size: 0.95rem;
+    color: var(--user-light); 
+    background-color: transparent;
+}
+
+/* Estilo para el ID de usuario (primera columna) */
+.table-hover td:first-child {
+    font-weight: 700;
+    color: var(--user-focus);
+}
+
+/* Estilo para la columna de VERIFICADO */
+.verification-status-verified {
+    color: var(--status-verified); /* Verde */
+    font-weight: 600;
+}
+.verification-status-unverified {
+    color: var(--status-unverified); /* Rojo */
+    font-weight: 600;
+}
+
+/* Pie de página (Tfoot) */
+.table-hover tfoot {
+    background-color: var(--user-header-bg);
+    border-top: 3px solid var(--user-border);
+}
+.table-hover tfoot th {
+    color: var(--user-light);
+    font-weight: 700;
+}

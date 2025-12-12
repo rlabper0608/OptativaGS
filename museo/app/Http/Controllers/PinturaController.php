@@ -38,5 +38,6 @@ class PinturaController extends Controller {
         $pintores = Pintor::whereHas('pinturas')->with('pinturas')->get();
         $pinturas = Pintura::all();
         return view('galeria', compact('pinturas'),compact('pintores') );
+        // return view('galeria', ['pintores'=> $pintores]);
     }
 }

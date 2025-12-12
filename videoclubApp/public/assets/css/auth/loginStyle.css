@@ -1,0 +1,123 @@
+/* -------------------------------------- */
+/* Variables de color (Temática Videoclub) */
+/* -------------------------------------- */
+:root {
+    --auth-dark-bg: #121212;     /* Fondo de la aplicación muy oscuro */
+    --auth-card-bg: #1e1e1e;     /* Fondo de la tarjeta (Terminal) */
+    --auth-accent: #ffc300;      /* Dorado/Ámbar (Resaltado) */
+    --auth-primary: #e50914;     /* Rojo Cinemático (Botones/Acción) */
+    --auth-light: #f0f0f0;       /* Texto claro */
+    --auth-secondary: #444444;   /* Gris industrial sutil */
+}
+
+body {
+    background-color: var(--auth-dark-bg);
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tarjeta (Card) de Login */
+/* -------------------------------------- */
+
+.card {
+    /* Fondo de la tarjeta más claro que el cuerpo */
+    background-color: var(--auth-card-bg);
+    border: 1px solid var(--auth-secondary);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra dramática */
+    padding: 1.5rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabecera de la Tarjeta */
+.card-header {
+    background-color: var(--auth-card-bg);
+    color: var(--auth-accent); /* Título en Dorado */
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--auth-primary); /* Línea divisoria roja */
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------- */
+/* Labels y Campos de Formulario */
+/* -------------------------------------- */
+
+.col-form-label {
+    color: var(--auth-light); /* Texto del label claro */
+    font-weight: 500;
+}
+
+.form-control {
+    background-color: var(--auth-dark-bg); /* Fondo del input muy oscuro */
+    border: 1px solid var(--auth-secondary);
+    color: var(--auth-light); /* Texto de entrada claro */
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #2b2b2b; /* Oscurecer un poco más en foco */
+    border-color: var(--auth-accent); /* Borde dorado */
+    box-shadow: 0 0 0 0.25rem rgba(255, 195, 0, 0.4); /* Resplandor dorado */
+    color: #ffffff !important; /* Asegurar que el texto sea visible */
+}
+
+/* Estilo para los errores de validación */
+.is-invalid {
+    border-color: var(--auth-primary) !important;
+}
+
+.invalid-feedback strong {
+    color: var(--auth-primary);
+}
+
+/* -------------------------------------- */
+/* Checkbox "Remember Me" */
+/* -------------------------------------- */
+
+.form-check-label {
+    color: var(--auth-light);
+}
+
+.form-check-input:checked {
+    background-color: var(--auth-primary); /* Rojo cinemático */
+    border-color: var(--auth-primary);
+}
+
+/* -------------------------------------- */
+/* Botón Principal (Login) */
+/* -------------------------------------- */
+
+.btn-primary {
+    /* Estilo de botón dramático Rojo Cinematográfico */
+    background-color: var(--auth-primary);
+    border-color: var(--auth-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff3333; /* Rojo más brillante */
+    border-color: #ff3333;
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.5);
+    transform: translateY(-1px);
+}
+
+/* -------------------------------------- */
+/* Enlaces (Register / Forgot Password) */
+/* -------------------------------------- */
+
+.btn-link {
+    color: var(--auth-accent); /* Enlaces en Dorado */
+    font-weight: 500;
+}
+
+.btn-link:hover {
+    color: var(--auth-light); /* Blanco al pasar el mouse */
+}

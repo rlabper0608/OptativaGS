@@ -1,0 +1,155 @@
+/* -------------------------------------- */
+/* Variables de color: Tema Terminal de Inventario (Amarillo Neón) */
+/* -------------------------------------- */
+:root {
+    --copy-dark: #111111; /* Fondo de la aplicación muy oscuro */
+    --copy-table-bg: #1e1e1e; /* Fondo de la tabla/modal */
+    --copy-header-bg: #2d2d2d; /* Fondo de la cabecera */
+    --copy-accent: #ffe400; /* Amarillo Neón de acento */
+    --copy-focus: #fff899; /* Amarillo claro para hover/selección */
+    --copy-light: #f0f0f0; /* Texto claro */
+    --copy-secondary: #808080; /* Gris industrial */
+    --copy-danger: #e50914; /* Rojo para eliminación */
+    --copy-warning: #ff8c00; /* Naranja para edición */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales de la Vista */
+/* -------------------------------------- */
+
+.table-container {
+    padding: 1rem 0;
+}
+
+/* Título principal de la sección */
+.d-flex h2 {
+    color: var(--copy-accent);
+    font-weight: 700;
+}
+
+/* Botón principal (Nueva Copia) */
+.btn-primary-copy {
+    background-color: var(--copy-accent);
+    border-color: var(--copy-accent);
+    color: var(--copy-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+.btn-primary-copy:hover {
+    background-color: var(--copy-focus);
+    border-color: var(--copy-focus);
+}
+
+/* -------------------------------------- */
+/* Estilos de la Tabla (Terminal Style) */
+/* -------------------------------------- */
+
+.table-hover {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 4px; /* Bordes afilados */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 228, 0, 0.1); /* Resplandor sutil */
+    background-color: var(--copy-table-bg);
+    color: var(--copy-light);
+}
+
+/* Cabecera (Thead) */
+.table-hover thead {
+    background-color: var(--copy-header-bg);
+    border-bottom: 2px solid var(--copy-accent);
+}
+
+.table-hover th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    color: var(--copy-accent); /* Texto de la cabecera en Amarillo Neón */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* Cuerpo (Tbody) */
+.table-hover tbody tr:nth-child(even) {
+    background-color: #242424; /* Alternar colores */
+}
+.table-hover tbody tr:nth-child(odd) {
+    background-color: var(--copy-table-bg);
+}
+
+/* Efecto Hover (Resaltado Digital) */
+.table-hover tbody tr:hover {
+    background-color: #383838;
+    color: var(--copy-focus);
+}
+
+.table-hover td {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid var(--copy-secondary); /* Borde sutil */
+    font-size: 0.95rem;
+    color: var(--copy-light); /* Color principal del texto de datos */
+    background-color: transparent;
+}
+/* Estilo para el ID de copia (primera columna) */
+.table-hover td:first-child {
+    font-weight: 700;
+    color: var(--copy-focus);
+}
+
+/* Pie de página (Tfoot) */
+.table-hover tfoot {
+    background-color: var(--copy-header-bg);
+    border-top: 2px solid var(--copy-accent);
+}
+.table-hover tfoot th {
+    color: var(--copy-light);
+    font-weight: 700;
+}
+
+/* -------------------------------------- */
+/* Botones de Acción (Tabla) */
+/* -------------------------------------- */
+
+.table-hover td a.btn {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Botón Edit (Advertencia Naranja) */
+.btn-warning {
+    background-color: var(--copy-warning); 
+    border-color: var(--copy-warning);
+    color: var(--copy-dark) !important;
+}
+
+/* Botón Delete (Peligro Rojo) */
+.btn-danger {
+    background-color: var(--copy-danger); 
+    border-color: var(--copy-danger);
+    color: white !important;
+}
+
+
+/* -------------------------------------- */
+/* Estilos de la Ventana Modal (Bootstrap) */
+/* -------------------------------------- */
+.modal-content {
+    background-color: var(--copy-table-bg) !important;
+    color: var(--copy-light) !important;
+    border: 1px solid #444;
+}
+
+.modal-header, .modal-footer {
+    border-color: #444 !important;
+}
+
+.modal-title {
+    color: var(--copy-accent) !important;
+}

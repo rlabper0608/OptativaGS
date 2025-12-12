@@ -1,0 +1,218 @@
+/* -------------------------------------- */
+/* Variables de color (Cinemático Oscuro) */
+/* -------------------------------------- */
+:root {
+    --movie-dark-bg: #0d0d0d;     /* Fondo principal muy oscuro */
+    --movie-card-bg: #1c1c1c;     /* Fondo de la ficha (Tarjeta) */
+    --movie-primary: #e50914;     /* Rojo Cinemático (Acción/Foco) */
+    --movie-accent: #ffc300;      /* Dorado/Ámbar (Resaltado/Título) */
+    --movie-light: #f0f0f0;       /* Texto principal claro */
+    --movie-secondary: #777777;   /* Gris industrial (separadores) */
+    --movie-text-sub: #b0b0b0;    /* Texto sutil/etiquetas */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales de la Vista */
+/* -------------------------------------- */
+body {
+    background-color: var(--movie-dark-bg);
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* -------------------------------------- */
+/* Tarjeta Principal (Poster y Datos) */
+/* -------------------------------------- */
+
+.card-perfil {
+    background-color: var(--movie-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.perfil-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Columna de la Portada */
+.perfil-foto {
+    flex-shrink: 0; /* Evita que la columna se reduzca */
+    width: 300px; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.perfil-foto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* -------------------------------------- */
+/* Botones de Acción (Editar/Eliminar) */
+/* -------------------------------------- */
+
+.perfil-botones {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perfil-botones a {
+    text-decoration: none;
+}
+
+.perfil-botones button {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.1s;
+}
+
+/* Estilo para botón Editar */
+.perfil-botones a:first-child button {
+    background-color: var(--movie-accent); 
+    color: var(--movie-dark-bg);
+}
+
+.perfil-botones a:first-child button:hover {
+    background-color: #ffd740;
+    transform: translateY(-2px);
+}
+
+/* Estilo para botón Eliminar */
+.perfil-botones a:last-child button {
+    background-color: var(--movie-primary);
+    color: white;
+}
+
+.perfil-botones a:last-child button:hover {
+    background-color: #ff3333;
+    transform: translateY(-2px);
+}
+
+/* -------------------------------------- */
+/* Datos de la Película */
+/* -------------------------------------- */
+
+.perfil-datos {
+    flex-grow: 1;
+    color: var(--movie-light);
+}
+
+.perfil-datos h1 {
+    color: var(--movie-accent); /* Título principal en Dorado */
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.movie-subtitle {
+    color: var(--movie-text-sub);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.perfil-item {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--movie-secondary);
+    color: var(--movie-text-sub);
+    font-weight: 500;
+}
+
+.perfil-item span {
+    color: var(--movie-light);
+    font-weight: 700;
+    display: block; /* Mover el valor a la línea siguiente para claridad */
+    margin-top: 3px;
+    font-size: 1.05rem;
+}
+
+/* -------------------------------------- */
+/* Sección de Comentarios/Valoraciones */
+/* -------------------------------------- */
+
+main h3 {
+    color: var(--movie-primary);
+    border-bottom: 2px solid var(--movie-secondary);
+    padding-bottom: 5px;
+    margin-top: 40px;
+    font-size: 1.75rem;
+}
+
+.lead {
+    color: var(--movie-light);
+    margin-top: 15px;
+}
+
+.text-end {
+    color: var(--movie-text-sub);
+    font-size: 0.9rem;
+}
+
+/* Formulario de Comentarios */
+form[action*="valoracion"] {
+    max-width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: #252525;
+    border-radius: 8px;
+    border: 1px solid var(--movie-secondary);
+}
+
+form[action*="valoracion"] label {
+    display: block;
+    color: var(--movie-accent);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+form[action*="valoracion"] textarea {
+    background: var(--movie-dark-bg);
+    border: 1px solid var(--movie-secondary);
+    color: var(--movie-light);
+    resize: vertical;
+    min-height: 120px;
+}
+
+form[action*="valoracion"] .btn-primary {
+    /* Botón de Enviar Comentario */
+    background-color: var(--movie-primary);
+    border-color: var(--movie-primary);
+    color: white;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+/* -------------------------------------- */
+/* Responsive Design (Mobile First) */
+/* -------------------------------------- */
+
+@media (max-width: 768px) {
+    .perfil-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .perfil-foto {
+        width: 100%;
+        max-width: 300px;
+    }
+}
