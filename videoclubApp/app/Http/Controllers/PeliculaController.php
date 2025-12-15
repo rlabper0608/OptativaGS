@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\PeliculaCreateRequest; 
+use App\Http\Requests\PeliculaCreateRequest;    
 
 
 class PeliculaController extends Controller {
@@ -129,14 +129,21 @@ class PeliculaController extends Controller {
 
     }
 
-    function update(Request $request, Pelicula $pelicula): RedirectResponse {
+    function update(Request $request, Pelicula $pelicula, TmdbService $tmdbService): RedirectResponse {
 
-        // Lógica para eliminar portada existente (vía checkbox)
+        $bestMatch = null; 
+
+        if (!$request->hasFile('portada')) {
+            $searchResults = $tmdbService->searchMovie($request->titulo);
+
+            if (!empty($searchResults['results'])) {
+                $bestMatch = $searchResults['results'][0];
+            }
+        }
+
         if($request->deleteImage == 'true' && $pelicula->portada) {
-            // Borrado del archivo de portada
             Storage::delete($pelicula->portada);
             
-            // La ponemos como nula en la base de datos
             $pelicula->portada = null;
         }
 
@@ -144,20 +151,34 @@ class PeliculaController extends Controller {
         $pelicula->fill($request->all());
         $txtmessage = "";
 
-        // Intentamos actualizar
         try {
-            // Subir nueva portada si se proporciona
+
             if($request->hasFile('portada')) {
-                if ($pelicula->portada) {
-                    Storage::delete($pelicula->portada);
-                }
-                
+ 
                 $ruta = $this->uploadPortada($request, $pelicula);
                 $pelicula->portada = $ruta;
-            }
+                $pelicula->save();
+            } 
 
-            $result = $pelicula->save();
-            $txtmessage = "La película se ha actualizado correctamente.";
+            else if ($bestMatch && $bestMatch['poster_path']) {
+                
+
+                $imageUrl = $tmdbService->getImageUrl($bestMatch['poster_path']);
+                
+
+                $imageContents = \Illuminate\Support\Facades\Http::get($imageUrl)->body();
+                
+
+                $filename = 'portadas/' . $pelicula->id . '.jpg';
+                
+
+                \Illuminate\Support\Facades\Storage::disk('public')->put($filename, $imageContents);
+
+                $pelicula->portada = $filename;
+                $pelicula->save(); 
+                
+                $txtmessage .= " (Portada de TMDb descargada y aplicada)";
+            }
 
         } catch(UniqueConstraintViolationException $e) {
 
