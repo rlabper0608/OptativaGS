@@ -1,59 +1,129 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎬 VideoClub App — Gestión de Videoclub con Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=flat-square&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![TMDB](https://img.shields.io/badge/API-TMDB-01B4E4?style=flat-square&logo=themoviedatabase&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Academic%20Project-blue?style=flat-square)
 
-## About Laravel
+> Aplicación web completa desarrollada con **Laravel** que simula las gestiones más comunes de un videoclub — reservas, cartelera, comentarios y panel de administración — con integración automática de carátulas vía **TMDB API**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Descripción
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+VideoClub App es una aplicación fullstack construida sobre el ecosistema Laravel que cubre tanto la experiencia del usuario final como la gestión administrativa completa. Destaca por su integración con la API de **The Movie Database (TMDB)**, que permite al administrador añadir películas sin necesidad de subir manualmente la carátula — el sistema la obtiene y almacena automáticamente.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ⚙️ Tecnologías
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Capa | Tecnologías |
+|------|------------|
+| Backend | PHP · Laravel · Eloquent ORM |
+| Frontend | Blade · HTML5 · CSS3 · JavaScript |
+| Base de datos | MySQL |
+| API externa | TMDB (The Movie Database) |
+| Autenticación | Laravel Auth |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ✨ Funcionalidades
 
-### Premium Partners
+### 👤 Usuario público
+- Consulta de la **cartelera** de películas disponibles
+- **Reserva** de películas
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 🔐 Usuario registrado
+- Todo lo anterior
+- **Comentarios** en fichas de películas
 
-## Contributing
+### 🛠️ Administrador
+- **CRUD completo de películas** — con carga automática de carátula vía TMDB API si no se sube manualmente
+- **CRUD de reservas** — gestión y seguimiento de todas las reservas
+- **CRUD de usuarios** — administración de cuentas registradas
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🎯 Integración con TMDB API
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Una de las funcionalidades más destacadas del proyecto. Al añadir una nueva película desde el panel de administración:
 
-## Security Vulnerabilities
+1. El administrador introduce el título de la película
+2. Si no sube una carátula manualmente, el sistema **consulta automáticamente la TMDB API**
+3. La imagen se obtiene y almacena en el servidor
+4. La ficha queda completa sin intervención manual
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Esto elimina la fricción del proceso de alta de películas y demuestra el consumo de APIs externas en un contexto real.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Instalación
+
+### Requisitos
+- PHP 8.x
+- Composer
+- MySQL
+- Clave de API de TMDB (gratuita en [themoviedb.org](https://www.themoviedb.org/settings/api))
+
+### Pasos
+
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/rlabper0608/videoclubApp.git
+cd videoclubApp
+
+# 2. Instala dependencias
+composer install
+
+# 3. Configura el entorno
+cp .env.example .env
+php artisan key:generate
+
+# 4. Configura la base de datos y la API key en .env
+DB_DATABASE=videoclub
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+TMDB_API_KEY=tu_api_key
+
+# 5. Ejecuta las migraciones y seeders
+php artisan migrate --seed
+
+# 6. Lanza el servidor
+php artisan serve
+```
+
+Accede en: `http://localhost:8000`
+
+---
+
+## 📁 Estructura relevante
+
+```
+videoclubApp/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── PeliculaController.php   # CRUD + integración TMDB
+│   │   ├── ReservaController.php
+│   │   └── ComentarioController.php
+│   └── Services/
+│       └── TmdbService.php          # Lógica de consulta a la API
+├── resources/views/                 # Plantillas Blade
+├── database/
+│   ├── migrations/
+│   └── seeders/
+└── routes/
+    └── web.php
+```
+
+---
+
+## 👨‍💻 Contexto académico
+
+Proyecto desarrollado durante el **Grado Superior de Desarrollo de Aplicaciones Web (DAW)** como práctica avanzada de Laravel, con énfasis en arquitectura MVC, relaciones Eloquent y consumo de APIs externas.
+
+---
+
+## 📄 Licencia
+
+Proyecto académico compartido con fines de portfolio. No está permitida su distribución o uso comercial sin autorización expresa del autor.
